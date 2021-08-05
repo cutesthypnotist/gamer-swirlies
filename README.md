@@ -15,3 +15,4 @@ Hellstormde: https://www.deviantart.com/hellstormde/art/Milky-Way-Galaxy-Global-
 darth-biomech: https://www.deviantart.com/darth-biomech/art/MilkyWay-galaxy-sphere-map-8k-746133328 (https://creativecommons.org/licenses/by-sa/3.0/)
 
 
+Repo: https://github.com/cutesthypnotist/swirlies-shader
