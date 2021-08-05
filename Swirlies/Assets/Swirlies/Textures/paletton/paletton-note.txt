@@ -1,0 +1,6 @@
+Any textures will work. 
+I generated mine from https://paletton.com/
+My steps:
+1) Click on randomize at the top right 
+2) Click on tables/export on the bottom right 
+3) Click on color swatches and then there is an option to get it as a png image.
