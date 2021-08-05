@@ -3,7 +3,9 @@
 ![img](./Images/1.png)
 
 Customizable spiral shader that you can use for your eyes, glasses, skybox, etc.
+
 UV Projection based off following bgolus article: https://bgolus.medium.com/distinctive-derivative-differences-cce38d36797b#85c9 
+
 Uses MIT License.
 
 Gradients: https://paletton.com/
