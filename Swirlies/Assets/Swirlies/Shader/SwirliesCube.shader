@@ -165,18 +165,19 @@ Shader "Custom/SwirliesV2 Cubemaps"
 				o.rd = normalize(_WorldSpaceCameraPos.xyz - o.wpos);
 				return o;
 			}
-float3 BlendOverlay (float3 base, float3 blend) // overlay
-{
-    return base < 0.5 ? (2.0 * base * blend) : (1.0 - 2.0 * (1.0 - base) * (1.0 - blend));
-}
+			float3 BlendOverlay (float3 base, float3 blend) // overlay
+			{
+				return base < 0.5 ? (2.0 * base * blend) : (1.0 - 2.0 * (1.0 - base) * (1.0 - blend));
+			}
 
 			float4 frag (v2f i) : SV_Target
 			{
 				float iTime = _Time.y;
-				                // normal from interpolated object space position
+				// normal from interpolated object space position
                 float3 normal = normalize(i.vertex);
 				float4 pos = i.vertex;
 
+				//https://bgolus.medium.com/distinctive-derivative-differences-cce38d36797b#85c9
                 // atan returns a value between -pi and pi
                 // so we divide by pi * 2 to get -0.5 to 0.5
                 float phi = atan2(normal.z, normal.x) / (UNITY_PI * 2.0);
@@ -188,6 +189,9 @@ float3 BlendOverlay (float3 base, float3 blend) // overlay
                 // so we flip the y to align with Unity's OpenGL style
                 // texture UVs so 0.0 is at the bottom
                 float theta = acos(-normal.y) / UNITY_PI;
+
+				
+				//https://github.com/bgolus/EquirectangularSeamCorrection/issues/1
 				// arbitrary non-zero value that is unique in each quad so the delta is never 0
 				float magic = 1.0 + float(i.uv.x) + 2.0 * float(i.uv.y);
 				float bad = (2.0*pos.x < pos.y) ? magic : 0.0;
