@@ -1,4 +1,4 @@
-# swirlies-shader
+# Gamer Swirlies
 
 ![img](./Images/1.png)
 
